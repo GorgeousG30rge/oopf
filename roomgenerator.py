@@ -39,12 +39,19 @@ class RoomGenerator:
 
         block_x = (x * random.randint(0, 512)) * block_width
         block_y = (y * random.randint(0, 512)) * block_height
-        teleport = Trigger(block_x, block_y, block_width, block_height)
-        teleport.create_teleport()
+        teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
+
 
         room.blocks.append(teleport.convert_to_json())
 
         return {'blocks': room.blocks}
+
+    @staticmethod
+    def count():
+        counter = 0
+        counter += 1
+        return counter
+
 
         
 

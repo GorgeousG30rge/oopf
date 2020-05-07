@@ -12,6 +12,9 @@ class RoomFactory:
                 room_generator = RoomGenerator(16,32,32)
                 self._generators.append(room_generator)
                 return room_generator.create_room()
+    
+    def counter(self):
+        return len(self._generators)
         
 
 
