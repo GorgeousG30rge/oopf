@@ -46,11 +46,7 @@ class RoomGenerator:
 
         return {'blocks': room.blocks}
 
-    @staticmethod
-    def count():
-        counter = 0
-        counter += 1
-        return counter
+
 
 
         
