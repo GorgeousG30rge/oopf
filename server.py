@@ -3,7 +3,7 @@ from roomfactory import RoomFactory
 from roomgenerator import RoomGenerator
 
 
-factory = RoomFactory(RoomGenerator(32,32,32))
+factory = RoomFactory()
 
 
 
