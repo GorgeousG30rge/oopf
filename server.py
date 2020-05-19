@@ -3,7 +3,7 @@ from roomfactory import RoomFactory
 from roomgenerator import RoomGenerator
 from roomgenerator2 import RoomGenerator2
 from emptyroomgenerator import EmptyRoomGenerator
-from settings import *
+from settings import ROOM_SIZE, BLOCK_WIDTH, BLOCK_HEIGHT
 
 
 
