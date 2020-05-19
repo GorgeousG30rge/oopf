@@ -33,13 +33,13 @@ class RoomGenerator:
             room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
 
-            block_x = (MID_POINT - round(random.gauss(0, 5)))
-            block_y = (MID_POINT - round(random.gauss(0, 5)))
+            block_x = (MID_POINT - round(random.gauss(0, 2 * self.room_size)))
+            block_y = (MID_POINT - round(random.gauss(0, 2 * self.room_size)))
 
             room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = (MID_POINT - round(random.gauss(0, 5)))
-            block_y = (MID_POINT - round(random.gauss(0, 5)))
+            block_x = (MID_POINT - round(random.gauss(0, 2 * self.room_size)))
+            block_y = (MID_POINT - round(random.gauss(0, 2 * self.room_size)))
             teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
 
 

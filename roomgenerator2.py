@@ -4,6 +4,7 @@ from bonus import Bonus
 from trigger import Trigger
 import math
 import random
+from settings import *
 
 
 class RoomGenerator2:
@@ -40,13 +41,13 @@ class RoomGenerator2:
 
         for i in range(random.randint(2, 10)):
 
-            block_x = (x * random.randint(512, 1024)) * block_width
-            block_y = (y * random.randint(512, 1024)) * block_height
+            block_x = (MID_POINT - round(random.gauss(0, 5)))
+            block_y = (MID_POINT - round(random.gauss(0, 5)))
 
             room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = (x * random.randint(512, 1024)) * block_width
-            block_y = (y * random.randint(512, 1024)) * block_height
+            block_x = (MID_POINT - round(random.gauss(0, 5)))
+            block_y = (MID_POINT - round(random.gauss(0, 5)))
             teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
 
             room.blocks.append(teleport.convert_to_json())
