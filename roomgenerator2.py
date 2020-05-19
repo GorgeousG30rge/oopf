@@ -8,6 +8,7 @@ import random
 class RoomGenerator2:
     """ Класс создает игровую комнату"""
     def __init__(self, room_size, block_width, block_height, room_x=0, room_y=0):
+        self.name = "Generator2"
         self.width = block_width
         self.height = block_height
         self.room_size = room_size
@@ -23,6 +24,11 @@ class RoomGenerator2:
             block_height = self.height
             block_x = (x * self.room_size + i) * block_width
             block_y = (y * self.room_size + 0) * block_height
+
+            room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
+
+            block_x = (x * self.room_size + i) * block_width
+            block_y = (y * self.room_size + self.room_size) * block_height
 
             room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
