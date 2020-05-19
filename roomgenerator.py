@@ -2,8 +2,8 @@ from room import Room
 from block import Block
 from bonus import Bonus
 from trigger import Trigger
-import math
 import random
+from settings import *
 
 class RoomGenerator:
     """ Класс создает игровую комнату"""
@@ -33,13 +33,13 @@ class RoomGenerator:
             room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
 
-            block_x = (x * random.randint(0, 512)) * block_width
-            block_y = (y * random.randint(0, 512)) * block_height
+            block_x = (MID_POINT - round(random.gauss(0, 5)))
+            block_y = (MID_POINT - round(random.gauss(0, 5)))
 
             room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = (x * random.randint(0, 512)) * block_width
-            block_y = (y * random.randint(0, 512)) * block_height
+            block_x = (MID_POINT - round(random.gauss(0, 5)))
+            block_y = (MID_POINT - round(random.gauss(0, 5)))
             teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
 
 

@@ -5,6 +5,7 @@ from trigger import Trigger
 import math
 import random
 
+
 class RoomGenerator2:
     """ Класс создает игровую комнату"""
     def __init__(self, room_size, block_width, block_height, room_x=0, room_y=0):
@@ -33,19 +34,19 @@ class RoomGenerator2:
             room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
             block_x = round((x * self.room_size + i) * block_width)
-            block_y = round((y * (random.randint(10, 500))))
+            block_y = round((y * (random.randint(512, 1024))))
 
             room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
         for i in range(random.randint(2, 10)):
 
-            block_x = (x * random.randint(0, 512)) * block_width
-            block_y = (y * random.randint(0, 512)) * block_height
+            block_x = (x * random.randint(512, 1024)) * block_width
+            block_y = (y * random.randint(512, 1024)) * block_height
 
             room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = (x * random.randint(0, 512)) * block_width
-            block_y = (y * random.randint(0, 512)) * block_height
+            block_x = (x * random.randint(512, 1024)) * block_width
+            block_y = (y * random.randint(512, 1024)) * block_height
             teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
 
             room.blocks.append(teleport.convert_to_json())
