@@ -4,7 +4,7 @@ from bonus import Bonus
 from trigger import Trigger
 import math
 import random
-from settings import *
+from settings import MID_POINT
 
 
 class RoomGenerator2:

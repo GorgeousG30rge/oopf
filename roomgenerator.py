@@ -3,7 +3,7 @@ from block import Block
 from bonus import Bonus
 from trigger import Trigger
 import random
-from settings import *
+from settings import MID_POINT
 
 class RoomGenerator:
     """ Класс создает игровую комнату"""
