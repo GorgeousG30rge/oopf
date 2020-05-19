@@ -1,5 +1,4 @@
-from roomgenerator import RoomGenerator
-from roomgenerator2 import RoomGenerator2
+
 
 class RoomFactory:
     """ Класс хранит созданные комнаты """
