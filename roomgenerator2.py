@@ -41,13 +41,13 @@ class RoomGenerator2:
 
         for i in range(random.randint(2, 10)):
 
-            block_x = (MID_POINT - round(random.gauss(0, 5)))
-            block_y = (MID_POINT - round(random.gauss(0, 5)))
+            block_x = x * (MID_POINT - round(random.gauss(0, 5)))
+            block_y = y * (MID_POINT - round(random.gauss(0, 5)))
 
             room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = (MID_POINT - round(random.gauss(0, 5)))
-            block_y = (MID_POINT - round(random.gauss(0, 5)))
+            block_x = x * (MID_POINT - round(random.gauss(0, 5)))
+            block_y = y * (MID_POINT - round(random.gauss(0, 5)))
             teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
 
             room.blocks.append(teleport.convert_to_json())
