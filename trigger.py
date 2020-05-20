@@ -1,7 +1,7 @@
 import random
 from baseblock import BaseBlock
 from room import Room
-from settings import *
+from settings import TELEPORT_X, TELEPORT_Y
 
 class Trigger(BaseBlock):
     def __init__(self, x, y, width, height, type_, x_random = TELEPORT_X, y_random = TELEPORT_Y):
