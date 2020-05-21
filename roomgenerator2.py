@@ -9,7 +9,7 @@ from settings import MID_POINT
 
 class RoomGenerator2:
     """ Класс создает игровую комнату"""
-    def __init__(self, room_size, block_width, block_height, room_x=0, room_y=0):
+    def __init__(self, room_size, block_width, block_height, room_x=1, room_y=1):
         self.name = "Generator2"
         self.width = block_width
         self.height = block_height
@@ -24,32 +24,29 @@ class RoomGenerator2:
         for i in range(self.room_size):
             block_width = self.width
             block_height = self.height
-            block_x = (x * self.room_size + i) * block_width
-            block_y = (y * self.room_size + 0) * block_height
 
-            room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
 
             block_x = (x * self.room_size + i) * block_width
-            block_y = (y * self.room_size + self.room_size) * block_height
+            block_y = round((i * math.cos(y * self.room_size + i) * block_width) + (y * self.room_size + 0) * block_height)
 
-            room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
+            room.blocks.append(Block(block_x, block_y, block_width, block_height, '/images/block.png').convert_to_json())
 
-            block_x = round((x * self.room_size + i) * block_width)
-            block_y = round((y * (random.randint(512, 1024))))
+            block_x = (x * self.room_size + i) * block_width
+            block_y = round((random.randint(0, self.room_size) * math.cos(y * self.room_size + i) * block_width) + (y * self.room_size + 0) * block_height)
 
-            room.blocks.append(Block(block_x, block_y, block_width, block_height).convert_to_json())
+            room.blocks.append(Block(block_x, block_y, block_width, block_height, '/images/block.png').convert_to_json())
 
-        for i in range(random.randint(2, 10)):
 
-            block_x = x * (MID_POINT - round(random.gauss(0, 5)))
-            block_y = y * (MID_POINT - round(random.gauss(0, 5)))
+        block_x = random.randint(x * block_width, x * self.room_size  * block_width)
+        block_y = random.randint(y * block_width, y * self.room_size  * block_width)
 
-            room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
+        room.blocks.append(Bonus(block_x, block_y, block_width, block_height).convert_to_json())
 
-            block_x = x * (MID_POINT - round(random.gauss(0, 5)))
-            block_y = y * (MID_POINT - round(random.gauss(0, 5)))
-            teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
+        block_x = random.randint(x * block_width, x * self.room_size  * block_width)
+        block_y = random.randint(y * block_width, y * self.room_size  * block_width)
 
-            room.blocks.append(teleport.convert_to_json())
+        teleport = Trigger(block_x, block_y, block_width, block_height, "teleport")
+        room.blocks.append(teleport.convert_to_json())
 
         return {'blocks': room.blocks}
+

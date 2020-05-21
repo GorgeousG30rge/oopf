@@ -1,9 +1,9 @@
 from baseblock import BaseBlock
 
 class Block(BaseBlock):
-    def __init__(self, x, y, width, height):
+    def __init__(self, x, y, width, height, image):
         BaseBlock.__init__(self, x, y, width, height)
-        self.image = '/images/block.png'
+        self.image = 'images/block.png'
 
 
     def convert_to_json(self):

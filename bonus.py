@@ -5,7 +5,7 @@ class Bonus(BaseBlock):
     def __init__(self, x, y, width, height):
         BaseBlock.__init__(self, x, y, width, height)
         self.type = 'score bonus'
-        self.image = 'images/block.png'  
+        self.image = 'images/coin.png'  
         self.effect = 500
 
     def convert_to_json(self):

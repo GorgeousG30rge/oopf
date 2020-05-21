@@ -7,6 +7,7 @@ class Trigger(BaseBlock):
     def __init__(self, x, y, width, height, type_, x_random = TELEPORT_X, y_random = TELEPORT_Y):
         BaseBlock.__init__(self, x, y, width, height)
         self.type = type_
+        self.image = 'images/block.png'
         self.coords = {"x": x_random,
                        "y": y_random
                        }
@@ -15,6 +16,7 @@ class Trigger(BaseBlock):
         return {
                 "x": self.x,
                 "y": self.y,
+                "image": self.image,
                 "width": self.width,
                 "height": self.height,
                 "type" : self.type,
