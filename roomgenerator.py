@@ -25,7 +25,7 @@ class RoomGenerator:
             block_height = self.height
 
 
-            block_x = (x * self.room_size + i) * block_width
+            block_x = (x * self.room_size + i * i) * block_width
             block_y = round((i * math.sin(y * self.room_size + i) * block_width) + (y * self.room_size + 0) * block_height)
 
             room.blocks.append(Block(block_x, block_y, block_width, block_height, '/images/ground.png').convert_to_json())
